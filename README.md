@@ -1,1 +1,1 @@
-"# wiskundePortfolio2018_gd1a" 
+# wiskundePortfolio2018_gd1a
