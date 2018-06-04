@@ -4,29 +4,30 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let ball = new Point(500,400,40,"red");
-let speedX = 2;
-let speedY = 2;
+let ballObject = {};
+ballObject.ball = new Point(500,400,40,"red");
+ballObject.speedX = 2;
+ballObject.speedY = 2;
 
 function animation(){
   requestAnimationFrame(animation);
   context.clearRect(0,0,canvas.width,canvas.height);
-  ball.x += speedX;
-  ball.y -= speedY;
-  ball.draw(context);
-  if(ball.y < ball.r){
-    speedY = -speedY;
+  ballObject.ball.x += ballObject.speedX;
+  ballObject.ball.y -= ballObject.speedY;
+  ballObject.ball.draw(context);
+  if(ballObject.ball.y < ballObject.ball.r){
+    ballObject.speedY = -ballObject.speedY;
   }
-  if (ball.x > canvas.width-ball.r){
-    speedX = - speedX;
-  }
-
-  if(ball.y > canvas.height-ball.r){
-    speedY = - speedY;
+  if (ballObject.ball.x > canvas.width-ballObject.ball.r){
+    ballObject.speedX = - ballObject.speedX;
   }
 
-  if(ball.x < ball.r){
-    speedX = - speedX;
+  if(ballObject.ball.y > canvas.height-ballObject.ball.r){
+    ballObject.speedY = - ballObject.speedY;
+  }
+
+  if(ballObject.ball.x < ballObject.ball.r){
+    ballObject.speedX = - ballObject.speedX;
   }
 }
 
