@@ -4,6 +4,23 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+window.addEventListener('keydown',(evt)=>{
+  switch (evt.keyCode) {
+    case 37:
+    console.log('key left')
+    break;
+    case 38:
+    console.log('key up')
+    break;
+    case 39:
+    console.log('key rechts')
+    break;
+    case 40:
+    console.log('key down')
+    break;
+  }
+})
+
 let ball = {};
 
 function setUp(){
