@@ -7,16 +7,16 @@ canvas.height = window.innerHeight;
 window.addEventListener('keydown',(evt)=>{
   switch (evt.keyCode) {
     case 37:
-    console.log('key left')
+    ball.vel.add(new Vector2d(-1,0));
     break;
     case 38:
-    console.log('key up')
+    ball.vel.add(new Vector2d(0,-1));
     break;
     case 39:
-    console.log('key rechts')
+    ball.vel.add(new Vector2d(1,0));
     break;
     case 40:
-    console.log('key down')
+    ball.vel.add(new Vector2d(0,1));
     break;
   }
 })
@@ -26,7 +26,7 @@ let ball = {};
 function setUp(){
   ball.point = new Point(100,100,50,"yellow");
   ball.pos = new Vector2d(100,100);
-  ball.vel = new Vector2d(10,10);
+  ball.vel = new Vector2d(0,0);
   animate();
 }
 
