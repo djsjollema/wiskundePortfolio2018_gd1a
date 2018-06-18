@@ -24,7 +24,7 @@ window.addEventListener('keydown',(evt)=>{
 let ball = {};
 
 function setUp(){
-  ball.point = new Point(100,100,50,"yellow");
+  ball.point = new Point(100,100,10,"yellow");
   ball.pos = new Vector2d(100,100);
   ball.vel = new Vector2d(0,0);
   animate();
@@ -32,7 +32,9 @@ function setUp(){
 
 function animate(){
   requestAnimationFrame(animate);
-  context.clearRect(0,0,canvas.width,canvas.height);
+  context.fillStyle = "rgba(255,255,255,0.05)";
+  context.fillRect(0,0,canvas.width,canvas.height);
+  //context.clearRect(0,0,canvas.width,canvas.height);
   ball.pos.add(ball.vel);
   ball.point.position = ball.pos;
   ball.point.draw(context);
