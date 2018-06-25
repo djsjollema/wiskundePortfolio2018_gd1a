@@ -14,7 +14,9 @@ function animation(){
     balls.push(ball)
   }
 
-  context.clearRect(0,0,canvas.width,canvas.height);
+  //context.clearRect(0,0,canvas.width,canvas.height);
+  context.fillStyle = "rgba(0,255,0,0.1)";
+  context.fillRect(0,0,canvas.width,canvas.height);
   for (var i = 0; i < balls.length; i++) {
     balls[i].update();
     balls[i].point.draw(context);
